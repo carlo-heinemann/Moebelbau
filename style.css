@@ -1,0 +1,101 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #faf7f2;
+    color: #333;
+}
+
+header {
+    background-color: #8b5e3c;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+}
+
+header .logo {
+    font-weight: bold;
+    font-size: 1.4em;
+}
+
+header nav a {
+    color: white;
+    margin-left: 15px;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+header nav a:hover {
+    text-decoration: underline;
+}
+
+.hero {
+    background: url('bilder/logo.png') no-repeat center center/contain;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
+
+.hero-text {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 50px 20px;
+    max-width: 1000px;
+    margin: auto;
+    border-radius: 10px;
+}
+
+.btn {
+    background-color: #c79a6d;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.btn:hover {
+    background-color: #a6784e;
+}
+
+.about, .contact, .projects {
+    padding: 50px 20px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.project-card {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.project-card img {
+    width: 100%;
+    display: block;
+}
+
+.project-card h3 {
+    margin: 15px;
+}
+
+.project-card p {
+    margin: 0 15px 15px;
+}
+
+footer {
+    background-color: #8b5e3c;
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+}
