@@ -31,7 +31,7 @@ header nav a:hover {
 }
 
 .hero {
-    background: url('bilder/logo.png') no-repeat center center/contain;
+    background: url('bilder/logo.jpg') no-repeat center center/contain;
     height: 100vh;
     display: flex;
     align-items: center;
@@ -99,3 +99,4 @@ footer {
     text-align: center;
     padding: 15px 0;
 }
+
