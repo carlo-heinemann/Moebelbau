@@ -7,15 +7,18 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
+    <header id="header">
         <div class="logo">Möbelbau: "Ein Hobby aus Leidenschaft!"</div>
-        <nav>
-            <a href="index.html">Startseite</a>
-            <a href="projekte.html">Projekte</a>
-            <a href="#about">Über mich</a>
-            <a href="#contact">Kontakt</a>
-        </nav>
+        <!-- Burger-Icon -->
+        <div class="burger" id="burger" onclick="toggleMenu()">☰</div>
     </header>
+
+    <!-- Sidebar Navigation -->
+    <nav class="menu" id="menu">
+        <a href="index.html">Startseite</a>
+        <a href="projekte.html">Projekte</a>
+        <a href="#about">Über mich</a>
+    </nav>
 
     <section class="hero"></section>
 
@@ -30,9 +33,35 @@
         <p>Ich baue seit vielen Jahren Möbel in meiner Freizeit – jedes Stück ist ein Unikat und wird mit Liebe und Sorgfalt von mir selbst entworfen und gefertigt.</p>
     </section>
 
+    <section id="contact" class="contact">
+        <h2>Kontakt</h2>
+        <p>Hast du Fragen oder Ideen? Schreibe mir einfach!</p>
+        <a class="btn" href="mailto:Carlo.Heinemann.ch@gmail.com">E-Mail senden</a>
+    </section>
+
     <footer>
-	<p>Hobbyprojekte · keine kommerziellen Zwecke · Ähnlichkeiten mit Marken oder Produkten sind zufällig und unbeabsichtigt.</p>
+        <p>Hobbyprojekte · keine kommerziellen Zwecke · Ähnlichkeiten mit Marken oder Produkten sind zufällig und unbeabsichtigt.</p>
     </footer>
+
+    <script>
+        const menu = document.getElementById('menu');
+        const header = document.getElementById('header');
+
+        // Funktion zum Öffnen/Schließen des Menüs
+        function toggleMenu() {
+            menu.classList.toggle("active");
+        }
+
+        // Dynamische Position & Höhe der Sidebar
+        function updateMenuPosition() {
+            const headerHeight = header.offsetHeight;
+            menu.style.top = headerHeight + 'px';
+            menu.style.height = `calc(100% - ${headerHeight}px)`;
+        }
+
+        // Initial und bei Fenstergröße ändern
+        window.addEventListener('load', updateMenuPosition);
+        window.addEventListener('resize', updateMenuPosition);
+    </script>
 </body>
 </html>
-
