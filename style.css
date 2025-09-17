@@ -31,7 +31,7 @@ header nav a:hover {
 }
 
 .hero {
-    background: url('bilder/Logo.jpg') no-repeat center center/contain;
+    background: url('bilder/logo.png') no-repeat center center/contain;
     height: 100vh;
     display: flex;
     align-items: center;
@@ -100,4 +100,32 @@ footer {
     padding: 15px 0;
 }
 
+.menu {
+  position: fixed;
+  right: -250px;        /* außerhalb des Bildschirms */
+  width: 250px;
+  background-color: #8b5e3c;
+  display: flex;
+  flex-direction: column;
+  transition: right 0.3s ease;
+  z-index: 1000;
+  overflow-y: auto;     /* Scrollen, falls Menü länger wird */
+}
+
+/* Links im Menü */
+.menu a {
+  color: white;
+  padding: 15px;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.menu a:hover {
+  background: #444;
+}
+
+/* Sichtbar, wenn aktiv */
+.menu.active {
+  right: 0;
+}
 
