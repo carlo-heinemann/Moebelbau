@@ -3,8 +3,8 @@
         "title": "Sessel",
         "description": "Ein Sessel auf dem man auch sitzen kann.",
         "pictures": [
-            "Stuhl/1747286759136-preview-1758276845477.png",
-            "Stuhl/1747286759156-fotor-bg-remover-20250919123223.png"
+            "/Stuhl/1747286759136-preview-1758276845477.png",
+            "/Stuhl/1747286759156-fotor-bg-remover-20250919123223.png"
         ],
         "background_color": "#F5F5DC"
     },
@@ -12,8 +12,8 @@
         "title": "Badmöbel",
         "description": "Badmöbel, die in einem Bad sind.",
         "pictures": [
-            "Bad/IMG_20221015_062508.jpg",
-            "Bad/IMG_20221015_062530.jpg"
+            "/Bad/IMG_20221015_062508.jpg",
+            "/Bad/IMG_20221015_062530.jpg"
         ],
         "background_color": "#F5F5DC"
     }
