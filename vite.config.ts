@@ -5,4 +5,7 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   base: '/Moebelbau/',
   plugins: [react()],
+  build: {
+    outDir: 'docs'
+  }
 })
