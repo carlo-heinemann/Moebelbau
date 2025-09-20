@@ -1,62 +1,13 @@
-<!DOCTYPE html>
-<html lang="de">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Möbel aus Leidenschaft</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <header id="header">
-        <div class="logo">Möbelbau: "Ein Hobby aus Leidenschaft!"</div>
-        <!-- Burger-Icon -->
-        <div class="burger" id="burger" onclick="toggleMenu()">☰</div>
-    </header>
-
-    <!-- Sidebar Navigation -->
-    <nav class="menu" id="menu">
-        <a href="index.html">Startseite</a>
-        <a href="projekte.html">Projekte</a>
-        <a href="#about">Über mich</a>
-    </nav>
-
-    <section class="hero"></section>
-
-    <section class="hero-text">
-        <h1>Handgemachte Möbel mit Liebe zum Detail</h1>
-        <p>Kleine Projekte, große Freude – entdecke meine Welt des Möbelbaus.</p>
-        <a class="btn" href="projekte.html">Zu den Projekten</a>
-    </section>
-
-    <section id="about" class="about">
-        <h2>Über mich</h2>
-        <p>Ich baue seit vielen Jahren Möbel in meiner Freizeit – jedes Stück ist ein Unikat und wird mit Liebe und Sorgfalt von mir selbst entworfen und gefertigt.</p>
-    </section>
-
-    <footer>
-        <p>Hobbyprojekte · keine kommerziellen Zwecke · Ähnlichkeiten mit Marken oder Produkten sind zufällig und unbeabsichtigt.</p>
-    </footer>
-
-    <script>
-        const menu = document.getElementById('menu');
-        const header = document.getElementById('header');
-
-        // Funktion zum Öffnen/Schließen des Menüs
-        function toggleMenu() {
-            menu.classList.toggle("active");
-        }
-
-        // Dynamische Position & Höhe der Sidebar
-        function updateMenuPosition() {
-            const headerHeight = header.offsetHeight;
-            menu.style.top = headerHeight + 'px';
-            menu.style.height = `calc(100% - ${headerHeight}px)`;
-        }
-
-        // Initial und bei Fenstergröße ändern
-        window.addEventListener('load', updateMenuPosition);
-        window.addEventListener('resize', updateMenuPosition);
-    </script>
-</body>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite + React + TS</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
 </html>
-
