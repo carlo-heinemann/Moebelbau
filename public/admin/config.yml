@@ -1,5 +1,5 @@
 backend:
-  name: git-gateway
+  name: auth0
   branch: react_app
   auth0_domain: "dev-sgb3wwtutakxxq1l.us.auth0.com"
   auth0_client_id: "9Rpn9pcemBSfouhxJvwkuj8zsOfkaPsW"
