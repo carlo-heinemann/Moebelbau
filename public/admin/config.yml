@@ -1,10 +1,7 @@
 backend:
-  name: auth0
+  name: github
+  repo: SuperUltraLucas/moebelwebsite
   branch: react_app
-  auth0_domain: "dev-sgb3wwtutakxxq1l.us.auth0.com"
-  auth0_client_id: "9Rpn9pcemBSfouhxJvwkuj8zsOfkaPsW"
-  base_url: "https://thriving-kulfi-1e9970.netlify.app"
-  site_url: "https://thriving-kulfi-1e9970.netlify.app"
 
 media_folder: "public/images"  # wohin hochgeladene Bilder gespeichert werden
 public_folder: "/images"       # wie du im Code auf die Bilder zugreifst
