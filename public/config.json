@@ -1,0 +1,23 @@
+{
+    "about_me": "Ich baue seit vielen Jahren Möbel in meiner Freizeit – jedes Stück ist ein Unikat und wird mit Liebe und Sorgfalt von mir selbst entworfen und gefertigt.",
+    "projects": [
+        {
+            "title": "Sessel",
+            "description": "Ein Sessel auf dem man auch sitzen kann.",
+            "pictures": [
+                "/Stuhl/1747286759136-preview-1758276845477.png",
+                "/Stuhl/1747286759156-fotor-bg-remover-20250919123223.png"
+            ],
+            "background_color": "#F5F5DC"
+        },
+        {
+            "title": "Badmöbel",
+            "description": "Badmöbel, die in einem Bad sind für Badsachen.",
+            "pictures": [
+                "/Bad/IMG_20221015_062508.jpg",
+                "/Bad/IMG_20221015_062530.jpg"
+            ],
+            "background_color": "#F5F5DC"
+        }
+    ]
+}

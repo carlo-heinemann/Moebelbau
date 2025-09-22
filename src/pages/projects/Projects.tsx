@@ -1,7 +1,16 @@
 import { Box, Card, CardContent, Stack, Typography } from "@mui/material"
-import projects from '../../constants/projects.json'
+import { useEffect, useState } from "react"
+import configRepository, { type Project } from "../../repositories/ConfigRepository"
 
 function Projects() {
+    const [projects, setProjects] = useState<Project[]>([])
+
+    useEffect(() => {
+        configRepository
+            .loadConfig()
+            .then(() => setProjects(configRepository.projects()))
+    }, [])
+
     return (
         <Stack>
             {projects.map((project) => (

@@ -2,7 +2,8 @@ import { Button, Card, CardActions, CardContent, Stack, Typography } from "@mui/
 import { START_STRINGS } from "../../constants/startStrings"
 import { COLORS } from "../../constants/colors"
 import { useLocation, useNavigate } from "react-router-dom"
-import { useEffect, useRef } from "react"
+import { useEffect, useRef, useState } from "react"
+import configRepository from "../../repositories/ConfigRepository"
 
 function Start() {
     const aboutMeRef = useRef<HTMLDivElement>(null)
@@ -53,6 +54,14 @@ function ProjectCard() {
 }
 
 function AboutMe({ aboutMeRef }: { aboutMeRef?: React.RefObject<HTMLDivElement | null> }) {
+    const [aboutMeText, setAboutMeText] = useState<string>('')
+
+    useEffect(() => {
+        configRepository
+            .loadConfig()
+            .then(() => setAboutMeText(configRepository.aboutMe()))
+    }, [])
+
     return (
         <Stack
             component="div"
@@ -60,7 +69,7 @@ function AboutMe({ aboutMeRef }: { aboutMeRef?: React.RefObject<HTMLDivElement |
             sx={{ textAlign: 'left' }}
         >
             <Typography variant="h5">{START_STRINGS.aboutMeTitle}</Typography>
-            <Typography>{START_STRINGS.aboutMeText}</Typography>
+            <Typography>{aboutMeText}</Typography>
         </Stack>
     )
 }
