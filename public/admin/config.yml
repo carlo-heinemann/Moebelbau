@@ -1,10 +1,9 @@
 backend:
-  name: github
-  repo: SuperUltraLucas/moebelwebsite
-  branch: react_app
+  name: git-gateway
+  branch: react_app    # Branch, in dem die Änderungen gespeichert werden
 
-media_folder: "public/images"  # wohin hochgeladene Bilder gespeichert werden
-public_folder: "/images"       # wie du im Code auf die Bilder zugreifst
+media_folder: "public/images"    # Ordner, in dem Bilder gespeichert werden
+public_folder: "/images"         # Pfad, wie du im Code auf die Bilder zugreifst
 
 collections:
   - name: "config"
