@@ -1,0 +1,20 @@
+media_folder: "public/images"
+public_folder: "/images"
+
+collections:
+  - name: "config"
+    label: "Konfiguration"
+    files:
+      - file: "public/config.json"
+        label: "Website-Konfiguration"
+        name: "site_config"
+        fields:
+          - { label: "Über mich", name: "about_me", widget: "text" }
+          - label: "Projekte"
+            name: "projects"
+            widget: "list"
+            fields:
+              - { label: "Titel", name: "title", widget: "string" }
+              - { label: "Beschreibung", name: "description", widget: "text" }
+              - { label: "Bilder", name: "pictures", widget: "list", field: { label: "Bild", name: "image", widget: "image" } }
+              - { label: "Hintergrundfarbe", name: "background_color", widget: "string" } 
