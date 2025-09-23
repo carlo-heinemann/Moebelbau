@@ -1,9 +1,10 @@
 backend:
-  name: git-gateway
-  branch: react_app    # Branch, in dem die Änderungen gespeichert werden
+  name: github
+  repo: "LucasHeinemann/moebelbau"
+  branch: react_app"
 
-media_folder: "public/images"    # Ordner, in dem Bilder gespeichert werden
-public_folder: "/images"         # Pfad, wie du im Code auf die Bilder zugreifst
+media_folder: "public/images"
+public_folder: "/images"
 
 collections:
   - name: "config"
