@@ -1,9 +1,7 @@
 backend:
   name: github
-  repo: "LucasHeinemann/moebelbau"
-  branch: react_app"
-  base_url: https://68d2622c3dd6840008387b16--thriving-kulfi-1e9970.netlify.app
-  auth_endpoint: api/auth
+  repo: LucasHeinemann/moebelbau
+  branch: react_app
 
 media_folder: "public/images"
 public_folder: "/images"
