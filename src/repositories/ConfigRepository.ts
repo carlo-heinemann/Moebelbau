@@ -15,7 +15,7 @@ class ConfigRepository {
 
     async loadConfig(): Promise<void> {
         if (this.config === null) {
-            const response = await fetch('/config.json')
+            const response = await fetch('/Moebelbau/config.json')
             this.config = await response.json() as Config
         }
     }

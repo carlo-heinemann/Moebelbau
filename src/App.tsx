@@ -18,7 +18,7 @@ function App() {
           <link rel="icon" href="/Logo.png" />
         </Helmet>
 
-        <BrowserRouter>
+        <BrowserRouter basename='/Moebelbau/'>
           <Header />
           <Box
             sx={{
