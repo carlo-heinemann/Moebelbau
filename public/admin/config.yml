@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: LucasHeinemann/moebelbau
+  repo: SuperUltraLucas/moebelwebsite
   branch: react_app
 
 media_folder: "public/images"
