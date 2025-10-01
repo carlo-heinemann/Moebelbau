@@ -51,7 +51,9 @@ function ProjectCard(
                 <Box
                     sx={{ 
                         display: 'flex',
+                        flexDirection: 'column',
                         justifyContent: 'center',
+                        alignItems: 'center',
                         flexWrap: 'wrap',
                         gap: 2
                     }}
@@ -63,15 +65,19 @@ function ProjectCard(
                             src={picture}
                             alt={`Bild ${index + 1}`}
                             sx={{
-                                width: 400,
-                                height: 'auto',
+                                width: 'auto',
+                                height: '300px',
                                 paddingBottom: 2,
                             }}
                         />
                     ))}
                 </Box>
                 <Typography variant="h5">{title}</Typography>
-                <Typography>{description}</Typography>
+                <Typography
+                    variant="body1"
+                    sx={{ marginTop: 2 }}
+                    dangerouslySetInnerHTML={{ __html: description }}
+                />
             </CardContent>
         </Card>
     )
