@@ -13,8 +13,9 @@ function Projects() {
 
     return (
         <Stack>
-            {projects.map((project) => (
+            {projects.map((project, index) => (
                 <ProjectCard
+                    key={index}
                     title={project.title}
                     description={project.description}
                     pictures={project.pictures}
@@ -60,14 +61,17 @@ function ProjectCard(
                     >
                     {pictures.map((picture, index) => (
                         <Box
-                            key={index}
+                            key={picture}
                             component="img"
                             src={picture}
                             alt={`Bild ${index + 1}`}
                             sx={{
+                                maxHeight: '300px',
+                                maxWidth: '100%',
                                 width: 'auto',
-                                height: '300px',
+                                height: 'auto',
                                 paddingBottom: 2,
+                                objectFit: 'contain',
                             }}
                         />
                     ))}
