@@ -2,7 +2,6 @@ import { Box, Card, CardContent, Collapse, Typography } from "@mui/material"
 import { useEffect, useRef, useState } from "react"
 import configRepository, { type Project } from "../../repositories/ConfigRepository"
 import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
 import { ArrowDropDownOutlined, ArrowDropUpOutlined } from "@mui/icons-material";
 import { COLORS } from "../../constants/colors";
 
