@@ -1,6 +1,10 @@
-import { Box, Card, CardContent, Stack, Typography } from "@mui/material"
-import { useEffect, useState } from "react"
+import { Box, Card, CardContent, Collapse, Typography } from "@mui/material"
+import { useEffect, useRef, useState } from "react"
 import configRepository, { type Project } from "../../repositories/ConfigRepository"
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import { ArrowDropDownOutlined, ArrowDropUpOutlined } from "@mui/icons-material";
+import { COLORS } from "../../constants/colors";
 
 function Projects() {
     const [projects, setProjects] = useState<Project[]>([])
@@ -12,80 +16,116 @@ function Projects() {
     }, [])
 
     return (
-        <Stack>
+        <Box
+            sx={{
+                display: 'flex',
+                flexWrap: 'wrap',
+                justifyContent: 'space-around',
+                rowGap: 2,
+                alignItems: 'flex-start',
+            }}
+        >
             {projects.map((project, index) => (
                 <ProjectCard
                     key={index}
                     title={project.title}
                     description={project.description}
                     pictures={project.pictures}
-                    backgroundColor={project.background_color}
                 />
             ))}
-        </Stack>
+        </Box>
     )
 }
-
+        
 function ProjectCard(
     { 
         title,
         description,
-        pictures,
-        backgroundColor
+        pictures
     }: { 
         title: string,
         description: string,
         pictures: string[],
-        backgroundColor: string
     }
 ) {
+    const [showDescription, setShowDescription] = useState(false);
+    const descriptionRef = useRef<HTMLDivElement | null>(null);
+
+    useEffect(() => {
+        if (showDescription && descriptionRef.current) {
+            descriptionRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+    }, [showDescription])
+
     return (
         <Card 
+            onClick={() => setShowDescription(!showDescription)}
+            elevation={10}
             sx={{
-                margin: '1rem',
-                backgroundColor: {backgroundColor},
+                borderRadius: '16px',
+                backgroundColor: COLORS.background,
+                width: {
+                    xs: '100%',
+                    sm: '45%',
+                    md: '30%',
+                }
             }}
         >
             <CardContent
-                sx={{ textAlign: 'left' }}
+                sx={{ 
+                    textAlign: 'left',
+                    padding: '0rem',
+                }}
             >
+                <Swiper
+                    spaceBetween={10}
+                    slidesPerView={1}
+                    loop={true}
+                >
+                    {pictures.map((picture, index) => (
+                        <SwiperSlide key={picture}>
+                            <Box
+                                component="img"
+                                src={picture}
+                                alt={`Bild ${index + 1}`}
+                                sx={{
+                                    width: '100%',
+                                    height: 'auto',
+                                    paddingBottom: 2,
+                                    objectFit: 'contain',
+                                }}
+                            />
+                        </SwiperSlide>
+                    ))}
+                </Swiper>
                 <Box
-                    sx={{ 
+                    sx={{ padding: '1rem' }}
+                >   
+                    <Typography variant="h6">{title}</Typography>
+                    <Collapse
+                        in={showDescription}
+                    >
+                        <Typography
+                            variant="body1"
+                            sx={{ marginTop: 2 }}
+                            dangerouslySetInnerHTML={{ __html: description }}
+                        />
+                    </Collapse>
+                </Box>
+                <Box
+                    ref={descriptionRef}
+                    sx={{
                         display: 'flex',
-                        flexDirection: 'column',
                         justifyContent: 'center',
                         alignItems: 'center',
-                        flexWrap: 'wrap',
-                        gap: 2
+                        paddingBottom: '1rem',
                     }}
-                    >
-                    {pictures.map((picture, index) => (
-                        <Box
-                            key={picture}
-                            component="img"
-                            src={picture}
-                            alt={`Bild ${index + 1}`}
-                            sx={{
-                                maxHeight: '300px',
-                                maxWidth: '100%',
-                                width: 'auto',
-                                height: 'auto',
-                                paddingBottom: 2,
-                                objectFit: 'contain',
-                            }}
-                        />
-                    ))}
+                >
+                        {showDescription ? <ArrowDropUpOutlined /> : <ArrowDropDownOutlined />}
                 </Box>
-                <Typography variant="h5">{title}</Typography>
-                <Typography
-                    variant="body1"
-                    sx={{ marginTop: 2 }}
-                    dangerouslySetInnerHTML={{ __html: description }}
-                />
             </CardContent>
         </Card>
     )
 }
-        
 
 export default Projects
