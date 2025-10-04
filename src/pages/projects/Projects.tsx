@@ -67,7 +67,13 @@ function ProjectCard(
                     xs: '100%',
                     sm: '45%',
                     md: '30%',
-                }
+                },
+                "@media (hover: hover) and (pointer: fine)": {
+                    "&:hover": {
+                        transform: "scale(1.05)",
+                        boxShadow: 6,
+                    },
+                },
             }}
         >
             <CardContent
